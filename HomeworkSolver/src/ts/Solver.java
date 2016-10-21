@@ -44,6 +44,19 @@ public class Solver {
 						if (words.length > 2) System.out.println("Too many arguments.");
 						else System.out.println(MathSolver.primeFactorization(Long.parseLong(words[1])));
 						break;
+					case "gcd":
+						if (words.length != 3) System.out.println("Incorrect number of arguments.");
+						else System.out.println(MathSolver.gcd(Long.parseLong(words[1]), Long.parseLong(words[2])));
+						break;
+					case "matrix":
+						if (words.length != 3) System.out.println("Incorrect number of arguments.");
+						else 
+						{
+							Matrix m = new Matrix(Integer.parseInt(words[1]), Integer.parseInt(words[2]));
+							m.createMatrix();
+							m.printMatrix();
+						}
+						break;
 					default:
 						System.out.println("Not valid expression.");
 					}
@@ -59,6 +72,7 @@ public class Solver {
 		System.out.println("-------\t\t\t-----\t\t\t-----------");
 		System.out.println("prime\t\t\tnumber(s)\tPrints yes if prime, no if composite.");
 		System.out.println("factorization\t\tnumber\t\tPrints prime factorization of number.");
+		System.out.println("gcd\t\t\t2 numbers\tPrints greatest common divisor of 2 numbers.");
 	}
 
 }

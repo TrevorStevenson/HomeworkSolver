@@ -55,4 +55,28 @@ public class MathSolver {
 		
 		return out;
 	}
+	
+	public static String gcd(long num1, long num2)
+	{
+		long remainder = -1;
+		long value = 0;
+		
+		if (num1 < num2)
+		{
+			value = num1;
+			num1 = num2;
+			num2 = value;
+		}
+		
+		remainder = num1 % num2;
+		
+		while (remainder != 0)
+		{
+			num1 = num2;
+			num2 = remainder;
+			remainder = num1 % num2;
+		}
+		
+		return String.valueOf(num2);
+	}
 }
